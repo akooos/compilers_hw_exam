@@ -1,0 +1,10 @@
+PROGRAM pelda.
+DATA:
+  i TYPE I,
+  j TYPE I.
+FOR i IN 10..20.
+  FOR j IN 0..4.
+    WRITE i.
+    WRITE j.
+  ENDFOR.
+ENDFOR.

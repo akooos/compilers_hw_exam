@@ -1,0 +1,17 @@
+PROGRAM pelda.
+DATA:
+  i TYPE I.
+FOR
+i
+IN
+10
+* ten
+..
+* twenty
+20
+.
+WRITE
+i
+.
+ENDFOR
+.

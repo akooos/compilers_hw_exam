@@ -1,0 +1,606 @@
+rm -rf lex.yy.cc Parserbase.h parse.cc bead3 *~
+flex bead3.l
+bisonc++ bead3.y
+g++ -obead3 bead3.cc parse.cc lex.yy.cc  
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:i
+decl -> ID TYPE I 
+DECLARED VARIABLE:s
+decl -> ID TYPE B 
+DECLARED VARIABLE:more
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+int_expr -> INTEGER
+move_inst -> MOVE int_expr TO ID
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+read_inst -> READ TO ID
+int_expr -> ID
+int_expr -> INTEGER
+lgc_expr -> int_expr GREATER int_expr
+int_expr -> ID
+int_expr -> INTEGER
+lgc_expr -> int_expr LESSER int_expr
+lgc_expr -> lgc_expr AND lgc_expr
+int_expr -> ID
+add_inst -> int_expr TO ID
+pg_insts -> inst DOT 
+conditional_inst -> IF lgc_expr DOT pg_insts ENDIF
+read_inst -> READ TO ID
+pg_insts -> inst DOT 
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+loop_inst -> WHILE lgc_expr DOT pg_insts ENDWHILE
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+start -> pg_head pg_decl pg_insts
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:i
+decl -> ID TYPE I 
+DECLARED VARIABLE:s
+decl -> ID TYPE B 
+DECLARED VARIABLE:more
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+int_expr -> INTEGER
+move_inst -> MOVE int_expr TO ID
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+read_inst -> READ TO ID
+int_expr -> ID
+int_expr -> INTEGER
+lgc_expr -> int_expr GREATER int_expr
+int_expr -> ID
+int_expr -> INTEGER
+lgc_expr -> int_expr LESSER int_expr
+lgc_expr -> lgc_expr AND lgc_expr
+int_expr -> ID
+add_inst -> int_expr TO ID
+pg_insts -> inst DOT 
+conditional_inst -> IF lgc_expr DOT pg_insts ENDIF
+read_inst -> READ TO ID
+pg_insts -> inst DOT 
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+loop_inst -> WHILE lgc_expr DOT pg_insts ENDWHILE
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+start -> pg_head pg_decl pg_insts
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+pg_decl -> EPSZILON(EMPTY) 
+start -> pg_head pg_decl
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl_sect -> decl 
+pg_decl -> DATA COLON decl_sect DOT
+start -> pg_head pg_decl
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE I 
+DECLARED VARIABLE:aa
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+int_expr -> INTEGER
+mod_inst -> MOD ID BY int_expr TO ID
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+int_expr -> INTEGER
+lgc_expr -> int_expr
+lgc_expr -> lgc_expr EQUAL lgc_expr
+int_expr -> ID
+lgc_expr -> int_expr
+lgc_expr -> NOT lgc_expr
+lgc_expr -> lgc_expr OR lgc_expr
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+IF lgc_expr DOT pg_insts ELSE DOT pg_insts ENDIF
+pg_insts -> inst DOT 
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+start -> pg_head pg_decl pg_insts
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+[34m----------------------------
+[94m[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+[34m----------------------------
+[94m[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+pg_decl -> EPSZILON(EMPTY) 
+start -> pg_head pg_decl
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl_sect -> decl 
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+pg_insts -> inst DOT 
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+start -> pg_head pg_decl pg_insts
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+int_expr -> INTEGER
+lgc_expr -> int_expr
+lgc_expr -> lgc_expr EQUAL lgc_expr
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+int_expr -> INTEGER
+lgc_expr -> int_expr
+lgc_expr -> lgc_expr EQUAL lgc_expr
+int_expr -> ID
+lgc_expr -> int_expr
+lgc_expr -> NOT lgc_expr
+lgc_expr -> lgc_expr OR lgc_expr
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+read_inst -> READ TO ID
+int_expr -> INTEGER
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+int_expr -> INTEGER
+lgc_expr -> int_expr
+lgc_expr -> lgc_expr EQUAL lgc_expr
+int_expr -> ID
+lgc_expr -> int_expr
+lgc_expr -> NOT lgc_expr
+lgc_expr -> lgc_expr OR lgc_expr
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+int_expr -> INTEGER
+lgc_expr -> int_expr
+lgc_expr -> lgc_expr EQUAL lgc_expr
+int_expr -> ID
+lgc_expr -> int_expr
+lgc_expr -> NOT lgc_expr
+lgc_expr -> lgc_expr OR lgc_expr
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE B 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+int_expr -> INTEGER
+lgc_expr -> int_expr
+lgc_expr -> lgc_expr EQUAL lgc_expr
+int_expr -> ID
+lgc_expr -> int_expr
+lgc_expr -> NOT lgc_expr
+lgc_expr -> lgc_expr OR lgc_expr
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+IF lgc_expr DOT pg_insts ELSE DOT pg_insts ENDIF
+pg_insts -> inst DOT 
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+start -> pg_head pg_decl pg_insts
+[31mJO-nak kaptam, de HIBAS[Szemantikus]: tesztfajlok/26.szemantikus-hibas
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE I 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+int_expr -> INTEGER
+lgc_expr -> int_expr
+lgc_expr -> lgc_expr EQUAL lgc_expr
+int_expr -> ID
+lgc_expr -> int_expr
+lgc_expr -> NOT lgc_expr
+lgc_expr -> lgc_expr OR lgc_expr
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+IF lgc_expr DOT pg_insts ELSE DOT pg_insts ENDIF
+pg_insts -> inst DOT 
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+start -> pg_head pg_decl pg_insts
+[31mJO-nak kaptam, de HIBAS[Szemantikus]: tesztfajlok/27.szemantikus-hibas
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+IF lgc_expr DOT pg_insts ELSE DOT pg_insts ENDIF
+pg_insts -> inst DOT 
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+start -> pg_head pg_decl pg_insts
+[31mJO-nak kaptam, de HIBAS[Szemantikus]: tesztfajlok/28.szemantikus-hibas
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+lgc_expr -> TRUE
+lgc_expr -> lgc_expr EQUAL lgc_expr
+int_expr -> ID
+lgc_expr -> int_expr
+lgc_expr -> NOT lgc_expr
+lgc_expr -> lgc_expr OR lgc_expr
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+IF lgc_expr DOT pg_insts ELSE DOT pg_insts ENDIF
+pg_insts -> inst DOT 
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+start -> pg_head pg_decl pg_insts
+[31mJO-nak kaptam, de HIBAS[Szemantikus]: tesztfajlok/29.szemantikus-hibas
+[34m----------------------------
+[94mpg_head -> PROGRAM ID DOT
+decl -> ID TYPE I 
+DECLARED VARIABLE:a
+decl -> ID TYPE B 
+DECLARED VARIABLE:b
+decl_sect -> decl 
+decl_sect -> decl COMMA decl_sect
+pg_decl -> DATA COLON decl_sect DOT
+read_inst -> READ TO ID
+int_expr -> INTEGER
+add_inst -> int_expr TO ID
+int_expr -> INTEGER
+sub_inst -> SUBTRACT int_expr FROM ID
+int_expr -> ID
+mul_inst -> MULTIPLY ID BY int_expr
+int_expr -> INTEGER
+div_inst -> DIVIDE ID BY int_expr
+read_inst -> READ TO ID
+int_expr -> ID
+lgc_expr -> int_expr
+int_expr -> ID
+lgc_expr -> int_expr
+lgc_expr -> NOT lgc_expr
+lgc_expr -> lgc_expr OR lgc_expr
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+int_expr -> ID
+write_inst -> WRITE int_expr
+pg_insts -> inst DOT 
+IF lgc_expr DOT pg_insts ELSE DOT pg_insts ENDIF
+pg_insts -> inst DOT 
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+pg_insts -> inst DOT pg_insts
+start -> pg_head pg_decl pg_insts
+[31mJO-nak kaptam, de HIBAS[Szemantikus]: tesztfajlok/30.szemantikus-hibas
+[34m----------------------------
+[33mJo: 26, Rossz: 5

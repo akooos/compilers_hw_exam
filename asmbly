@@ -1,0 +1,25 @@
+#!/bin/bash
+
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+if [[ $# -ne 1 ]]; then
+printf "${RED}Nincs eleg parameter!${NC}\n"
+printf "${GREEN}Ez a szkript egy *.asm fálj + io.c linkelésére van
+felkészítve!${NC}\n"
+exit -1
+fi
+nasm -g -f elf32 -o $1.o $1.asm
+if [[ $? -ne 0 ]]; then
+printf "${RED}NASM exited with error?! EC=$? ${NC}\n";
+exit -2
+fi
+gcc -pipe -g -m32 -o $1.out $1.o io.c
+if [[ $? -ne 0 ]]; then
+printf "${RED}GCC exited with error?! EC=$? ${NC}\n";
+exit -3
+else
+printf "${GREEN}Jónak tűnik! :)  ${NC}\n"
+fi
+
